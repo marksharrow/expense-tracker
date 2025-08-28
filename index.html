@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A retro ATM style expense tracker with responsive design and glowing neon vibes."
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <title>ATM Expense Tracker</title>
+
+    <!-- Retro/ATM vibe for headings; system sans for body -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Your styles (supports both .app-container and .container) -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Chart.js for the doughnut chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Use both classes so it works with either CSS version -->
+    <div class="app-container container">
+      <header class="app-header" role="banner">
+        <h1>Expense Tracker</h1>
+      </header>
+
+      <main role="main">
+        <!-- Balance -->
+        <section class="balance-section" aria-labelledby="balance-title">
+          <h2 id="balance-title">Total Balance</h2>
+          <p class="balance" id="balance">$0.00</p>
+        </section>
+
+        <!-- Add expense -->
+        <section class="form-section" aria-labelledby="add-expense-title">
+          <h3 id="add-expense-title" class="visually-hidden">Add Expense</h3>
+          <form id="expense-form" autocomplete="off">
+            <label for="expense-name" class="visually-hidden"
+              >Expense name</label
+            >
+            <input
+              type="text"
+              id="expense-name"
+              placeholder="Expense name"
+              inputmode="text"
+              required
+            />
+            <label for="expense-amount" class="visually-hidden">Amount</label>
+            <input
+              type="number"
+              id="expense-amount"
+              placeholder="Amount"
+              step="0.01"
+              inputmode="decimal"
+              required
+            />
+            <button type="submit" aria-label="Add expense">Add Expense</button>
+          </form>
+        </section>
+
+        <!-- List -->
+        <section class="list-section" aria-labelledby="history-title">
+          <h3 id="history-title">Expenses</h3>
+          <ul id="expense-list" class="expense-list" aria-live="polite"></ul>
+        </section>
+
+        <!-- Chart -->
+        <section class="chart-section" aria-labelledby="chart-title">
+          <h3 id="chart-title">Spending Breakdown</h3>
+          <canvas id="expenseChart"></canvas>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          💸 Built with passion by
+          <a
+            href="https://www.linkedin.com/in/lawrence-sharrow/"
+            target="_blank"
+          >
+            Lawrence Sharrow
+          </a>
+          | © 2025
+        </p>
+      </footer>
+    </div>
+
+    <!-- Money machine JS (plays sounds, animates balance, updates chart) -->
+    <script src="script.js"></script>
+  </body>
+</html>
