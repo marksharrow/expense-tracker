@@ -95,8 +95,8 @@ button:hover {
   margin: 1.2rem 0;
   font-size: clamp(1.2rem, 5vw, 1.6rem);
   font-weight: bold;
-  color: #22ff55;
-  text-shadow: 0 0 8px #22ff55;
+  color: #ffffff;
+  text-shadow: 0 0 12px #22ff55, 0 0 20px #00ff99;
   animation: flicker 1.5s infinite alternate;
 
   /* Prevent overflow */
